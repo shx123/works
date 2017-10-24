@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>详情页</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.jqzoom.css" />
+		<link rel="stylesheet" type="text/css" href="css/thickbox.css" />
+		<style type="text/css">
+			a img,
+			:link img,
+			:visited img {
+				border: none;
+			}
+			
+			table {
+				border-collapse: collapse;
+				border-spacing: 0;
+			}
+			
+			:focus {
+				outline: none;
+			}
+			
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			p,
+			blockquote,
+			dd,
+			dt {
+				margin: 0 0 8px 0;
+				line-height: 1.5em;
+			}
+			
+			fieldset {
+				padding: 0px;
+				padding-left: 7px;
+				padding-right: 7px;
+				padding-bottom: 7px;
+			}
+			
+			fieldset legend {
+				margin-left: 15px;
+				padding-left: 3px;
+				padding-right: 3px;
+				color: #333;
+			}
+			
+			dl dd {
+				margin: 0px;
+			}
+
+			
+			.clearfix:after {
+				clear: both;
+				content: ".";
+				display: block;
+				font-size: 0;
+				height: 0;
+				line-height: 0;
+				visibility: hidden;
+			}
+			
+			.clearfix {
+				display: block;
+				zoom: 1
+			}
+			
+			ul#thumblist {
+				display: block;
+			}
+			
+			ul#thumblist li {
+				float: left;
+				margin-right: 2px;
+				list-style: none;
+			}
+			
+			ul#thumblist li a {
+				display: block;
+				border: 1px solid #CCC;
+				height: 60px;
+			}
+			
+			ul#thumblist li a.zoomThumbActive {
+				border: 1px solid red;
+			}
+			
+			.jqzoom {
+				text-decoration: none;
+				float: left;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="header">
+			<div class="contWidth">
+				<a href="#logo" class="logo">
+					<img src="img/logo.png" alt="logo" height="40px" width="auto" />
+				</a>
+				<div class="search">
+					<input type="text" id="inputSearch" class="" value="输入商品名称" />
+					<i class="fa fa-search-plus fa-2x" aria-hidden="true" ></i>
+				</div>
+
+				<div id="nav" class="mainNav">
+					<ul class="nav">
+						<li>
+							<a href="#">首页</a>
+							<div class="subNav" >
+								<div class="subitem">
+									<dl>
+										<dt>品牌</dt>
+										<dd>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+										</dd>
+									</dl>
+									<dl>
+										<dt>品牌</dt>
+										<dd>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+										</dd>
+									</dl>
+									
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#">精品推荐</a>
+							<div class="subNav" >
+								<div class="subitem">
+
+									<dl>
+										<dt>品牌</dt>
+										<dd>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+										</dd>
+									</dl>
+									
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#">男装</a>
+							<div class="subNav" >
+								<div class="subitem">
+									<dl>
+										<dt>品牌</dt>
+										<dd>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+										</dd>
+									</dl>
+									
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#">女装</a>
+							<div class="subNav" >
+								<div class="subitem">
+									<dl>
+										<dt>品牌</dt>
+										<dd>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+										</dd>
+									</dl>									
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="#">鞋包配饰</a>
+							<div class="subNav" >
+								<div class="subitem">
+									<dl>
+										<dt>品牌</dt>
+										<dd>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+											<span>阿迪达斯</span><span>耐克</span><span>李宁</span><span>乔丹</span><span>安踏</span><span>纽巴伦</span>
+										</dd>
+									</dl>									
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="janeshop">
+				<div id="jnCatalog">
+					<h2 title="商品分类">商品分类</h2>
+					<div class="jnCatainfo">
+						<h3>推荐商品</h3>
+						<ul>
+							<li><a href="#nogo">耐克</a></li>
+							<li><a href="#nogo" class="promoted">阿迪达斯</a></li>
+							<li><a href="#nogo">达芙妮</a></li>
+							<li><a href="#nogo">李宁</a></li>
+							<li><a href="#nogo">安踏</a></li>
+							<li><a href="#nogo">奥康</a></li>
+							<li><a href="#nogo" class="promoted">骆驼</a></li>
+							<li><a href="#nogo">特步</a></li>
+						</ul>
+						<br class="clear" />
+						<h3>女装</h3>
+						<ul>
+							<li><a href="#nogo">耐克</a></li>
+							<li><a href="#nogo" class="promoted">阿迪达斯</a></li>
+							<li><a href="#nogo">达芙妮</a></li>
+							<li><a href="#nogo">李宁</a></li>
+							<li><a href="#nogo">安踏</a></li>
+							<li><a href="#nogo">奥康</a></li>
+							<li><a href="#nogo" class="promoted">骆驼</a></li>
+							<li><a href="#nogo">特步</a></li>
+						</ul>
+						<br class="clear" />
+						<h3>男装</h3>
+						<ul>
+							<li><a href="#nogo">耐克</a></li>
+							<li><a href="#nogo" class="promoted">阿迪达斯</a></li>
+							<li><a href="#nogo">达芙妮</a></li>
+							<li><a href="#nogo">李宁</a></li>
+							<li><a href="#nogo">安踏</a></li>
+							<li><a href="#nogo">奥康</a></li>
+							<li><a href="#nogo" class="promoted">骆驼</a></li>
+							<li><a href="#nogo">特步</a></li>
+						</ul>
+						<br class="clear" />
+						<h3>鞋包饰品</h3>
+						<ul>
+							<li><a href="#nogo">耐克</a></li>
+							<li><a href="#nogo" class="promoted">阿迪达斯</a></li>
+							<li><a href="#nogo">达芙妮</a></li>
+							<li><a href="#nogo">李宁</a></li>
+							<li><a href="#nogo">安踏</a></li>
+							<li><a href="#nogo">奥康</a></li>
+							<li><a href="#nogo" class="promoted">骆驼</a></li>
+							<li><a href="#nogo">特步</a></li>
+						</ul>
+						<br class="clear" />
+					</div>
+				</div>
+				<div id="jnProitem">
+
+					<div class="clearfix jqzoomWrap" id="content">
+						<div class="clearfix">
+							<a href="img/shirt_big.jpg" class="jqzoom" rel='gal1' title="男士衬衫">
+								<img class="small" src="img/shirt.jpg" title="男士衬衫">
+							</a>
+
+						</div>
+
+						<div id="hdpic">
+							<a href="img/shirt_big.jpg" class="thickbox" title="男士衬衫">
+								<img src="img/shirt.jpg" style="display: none" />
+								<p style="text-align: center">查看高清大图</p>
+							</a>
+						</div>
+
+						<br/>
+						<div class="clearfix">
+							<ul id="thumblist" class="clearfix imgList">
+								<li>
+									<a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'img/shirt.jpg',largeimage: 'img/shirt_big.jpg'}">
+										<img src='img/shirt.jpg'></a>
+								</li>
+								<li>
+									<a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'img/shirt1.jpg',largeimage: 'img/shirt1_big.jpg'}"><img src='img/shirt1.jpg'></a>
+								</li>
+								<li>
+									<a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: 'img/shirt2.jpg',largeimage: 'img/shirt2_big.jpg'}"><img src='img/shirt2.jpg'></a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="tab">
+						<div class="tab_menu">
+							<ul>
+								<li class="selected">产品属性</li>
+								<li>产品尺码表</li>
+								<li>产品介绍</li>
+							</ul>
+						</div>
+						<div class="tab_box">
+							<div class='show'>1111111111111111</div>
+							<div>22222222222222</div>
+							<div>33333333333333333</div>
+						</div>
+					</div>
+
+				</div>
+				<div id="jnDetails">
+					<h3>免烫高支棉条纹衬衫</h3>
+					<ul>
+						<li>全新精品高支棉衬衫再次提升品质，精选100%新疆长绒棉制造而成，平整度好，短绒少。</li>
+						<li>价格：<span class="original">379.00</span>元</li>
+						<li>促销：<span class="promotion">200.00</span>元</li>
+
+						<li class="color">颜色：
+							<img src='img/shirt.jpg' alt='男士衬衫' title="男士衬衫灰色"/>
+							<img src='img/shirt_green.jpg' alt='男士衬衫' title="男士衬衫墨绿色"/>
+							<img src='img/shirt_pink.jpg' alt='男士衬衫' title="男士衬衫粉色"/>
+						</li>
+						<li>
+							<span>尺寸：</span><strong>未选择</strong>
+							<ul class="size">
+								<li>S</li>
+								<li>M</li>
+								<li>L</li>
+								<li>XL</li>
+							</ul>
+						</li>
+						<li id='num'>
+							数量：
+							<input type='number' value="1"/> 库存
+							<span class='storage'>36</span>件
+						</li>
+						<li>总计：<span id='sum'>200.00</span>元</li>
+						<li>给商品评分：
+							<i class="fa fa-star" aria-hidden="true" title='1分'></i>
+							<i class="fa fa-star" aria-hidden="true" title='2分'></i>
+							<i class="fa fa-star" aria-hidden="true" title='3分'></i>
+							<i class="fa fa-star" aria-hidden="true" title='4分'></i>
+							<i class="fa fa-star" aria-hidden="true" title='5分'></i>
+						</li>
+					</ul>
+					<button>放入购物车</button>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="footer">
+			备案号@467976646464789797
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>		
+		<script src="js/jquery.jqzoom-core.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.thickbox.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/detail.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>
