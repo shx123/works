@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+* {margin:0; padding:0;}
+#ul1 {width:366px; margin:0 auto; position:relative;}
+#ul1 li {list-style:none; width:100px; height:100px; background:#CCC; border:1px solid black; float:left; margin:10px; z-index:1;}
+#ul1 li img { width:100%; height:100%;/*使用CSS的相对宽度，解决内容随着父块的宽高的变化而变化*/}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+/**
+ * @author miaov
+ */
+function getStyle(obj, attr){
+	if(obj.currentStyle){
+		return obj.currentStyle[attr];
+	} else {
+		return getComputedStyle(obj, false)[attr];
+	}
+}
+
+//function startMove(obj, attr, iTarget, fn)原来的运动框架的传值的方法
+function startMove(obj, json, fn){
+	clearInterval(obj.timer);
+	obj.timer=setInterval(function (){
+		var bStop=true;	//最终完美之检测停止，第一步，这个位置给下面的检测停止来使用，先假设所有效果都完成了	//这一次运动就结束了——所有的值都到达了
+		for(var attr in json){//使用for in循环json即所有值
+			//1.取当前的值
+			var iCur=0;
+			if(attr=='opacity'){
+				iCur=parseInt(parseFloat(getStyle(obj, attr))*100);
+			} else {
+				iCur=parseInt(getStyle(obj, attr));
+			}
+			
+			//2.算速度
+			//var iSpeed=(iTarget-iCur)/8;原运动此处只传一个值
+			//这是新的框架中传当中某一个值
+			var iSpeed=(json[attr]-iCur)/8;
+			iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+			
+			//3.检测停止
+			//if(iCur==iTarget)原来的,检测停止，即检测一个元素到位了，即关闭定时器，所以这里就暂停到一半的位置了
+			if(iCur!=json[attr]){//最终完美之检测停止，第二步，如果说json中有一个效果未完成，即bStop为假
+			//不是原来的那种，一个到地方了即暂停，而是等所有的元素到齐后，即暂停
+				bStop=false;
+			}
+			
+			if(attr=='opacity'){
+				obj.style.filter='alpha(opacity:'+(iCur+iSpeed)+')';
+				obj.style.opacity=(iCur+iSpeed)/100;
+			} else {
+				obj.style[attr]=iCur+iSpeed+'px';
+			}
+		}//for循环的结束
+		
+		if(bStop){//最终完美之检测停止，第三步，在整个循环外，使用判断，如果说bStop值为真，即所有效果都完成了，那么我们才关闭定时器
+			clearInterval(obj.timer);
+			
+			if(fn){
+				fn();
+			}
+		}
+		
+	}, 30)
+}//原来的定时器，每30秒启动时，只能执行一个项目如宽或高或背景，而当前的新框架，在定时器每30秒内启动时，其使用了for in循环，执行了一轮，即json中设置的所有项目，即宽、高、背景同时执行了。
+</script>
+<script type="text/javascript">
+window.onload=function ()
+{
+	var oUl=document.getElementById('ul1');
+	var aLi=oUl.getElementsByTagName('li');
+	//var oImg=aLi.getElementsByTagName('img');
+	var iMinZindex=2;//第一步，加索引值，这个经常使用，
+	var i=0;
+	
+	//1.布局转换
+	for(i=0;i<aLi.length;i++)
+	{
+		//aLi[i].innerHTML='left:'+aLi[i].offsetLeft+', top:'+aLi[i].offsetTop;
+		aLi[i].style.left=aLi[i].offsetLeft+'px';
+		aLi[i].style.top=aLi[i].offsetTop+'px';
+	}
+	
+	for(i=0;i<aLi.length;i++)
+	{
+		aLi[i].style.position='absolute';
+		aLi[i].style.margin='0';
+	}
+	
+	//2.加事件
+	for(i=0;i<aLi.length;i++)
+	{
+		aLi[i].onmouseover=function ()
+		{
+			this.style.zIndex=iMinZindex++;//第二步，让当前这个元素的z-index值++即，不断提高、最高，这样会出问题吗？理论上会出问题，有一个面试题，z-index的最大值是多少?其实就是int的范围即x的y次方即2147483648，如果我们对此无概念的话，我们来举个例子，如果用户每秒钟把鼠标称入这个div一次，不吃饭、不上厕所、不睡觉的话，能用多少天呢？2147483648/60/60/24/365=68年，68年以后，这个人的这台计算机还在正常使用，这个例子才会出问题，于是有这样一个场景，68年后的我们都是老头了，这时一个拄着拐棍的满头白发老头，过来跟你说，兄弟啊，你68年写的那个例子有BUG，这时你疯了吗？
+			startMove(this, {width: 200, height: 200, marginLeft: -50, marginTop: -50});
+		};
+		
+		aLi[i].onmouseout=function ()
+		{
+			startMove(this, {width: 100, height: 100, marginLeft: 0, marginTop: 0});
+		};
+	}
+};
+</script>
+</head>
+
+<body>
+<ul id="ul1">
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+	<li><img src="img/1.jpg" width="98" height="98" /></li>
+</ul>
+</body>
+</html>

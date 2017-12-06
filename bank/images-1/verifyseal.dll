@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>可信网站</title>
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<link rel="stylesheet" href="http://rr.knet.cn/static/css/verify.css" type="text/css"/>
+<link rel="shortcut icon" href="http://rr.knet.cn/static/images/favicon.ico" type="image/x-icon" />
+</head>
+<body class="bd_bdr" onselectstart="return false;">
+
+	<div class="container">
+		<!-- 页头 begin-->
+		<span id="trust_query_input_tips" style="display:none" class="i18n" key="TRUST_QUERY_INPUT_TIPS">输入单位名称/域名/网站名称/可信编码</span>
+<span id="trust_query_btn" style="display:none" class="i18n" key="TRUST_QUERY_BTN">查 询</span>
+<script language="javascript">
+	function getTxt(){			
+			var obj = document.getElementById("trust_query_input_tips");
+			var obj2 = document.getElementById("txtObj");
+			obj2.placeholder = obj.innerHTML;
+			
+			var obj3 = document.getElementById("trust_query_btn");
+			var obj4 = document.getElementById("btn_trust_query");
+			obj4.value = obj3.innerHTML;
+			funPlaceholder(document.getElementById("txtObj"));
+	}
+	window.onload = function(){
+		getTxt();
+	};
+	
+	function trust_query(){   
+		var trust_query_input=document.getElementById("txtObj").value;
+		document.getElementById("trust_query_form").action="http://t.knet.cn/?verify_searchDM="+encodeURI(encodeURI(trust_query_input))+"&isFromVerify=true";
+		return true;   
+	}   
+</script>
+<div class="lan" style=" height: 40px;margin-bottom:12px;">
+<form id="trust_query_form" target="_blank" action="" onsubmit="return trust_query();" method="POST" >
+	<table width="635" border="0" cellspacing="0"  class="addIput">
+	  <tr>
+	    <td width="185"><strong><span class="i18n" key="TRUST_QUERY_TIPS">可信网站权威数据查询:</span></strong></td>
+	    <td width="347"><input name="trust_queryValue" type="text" class="text" placeholder="输入单位名称/域名/网站名称/可信编码" id="txtObj" /></td>
+	    <td width="89"><input id="btn_trust_query" name="" type="submit" value="" class="butbg"/></td>
+	  </tr>
+	</table>
+</form>
+	<a href="http://kexin.knet.cn/column_1/column_1_2/column_1_2_1/column_1_2_1_6/?r2=a3hsb2dvLmtuZXQuY246MTIwMDAvdmVyaWZ5c2VhbC5kbGw_c249ZTE0MDMxODExMDEwNjQ3NDE5OTNrYTAwMDAwMCZzaXplPTM&r1=d3d3LmljYmMuY29tLmNuL2ljYmMv&sdn=d3d3LmljYmMuY29tLmNu" target="_blank" class="wysq"><span class="i18n" key="APPLY_VERIFY">申请验证</span></a>
+	<div style="clear:both;"></div>
+</div>
+<div class="nv nv_3 fix " id="nav" > 
+		<ul class="fl">
+			<li><a href="javascript:;" for="site_info" class="cur tab" id="site_info_a" key="SITE_INFO">网站信息</a><i class="r"></i></li>
+			<li><a href="javascript:;" for="safe_info" class="tab" id="safe_info_a" key="SAFE_INFO">安全信息</a><i class="l"></i><i class="r"></i></li>
+			<li><a href="javascript:;" for="style_info" class="tab" id="style_info_a" key="STYLE_INFO">资质荣誉</a><i class="l"></i></li>
+			</ul>
+	</div>
+<!-- 页头 end-->
+		
+		<div class="box_warp" style="background:url(/watermarkbg) repeat-y 0 0;">
+			<div class="box_outer">
+				<div class="box"> 
+					<div class="tp_info fix" >
+	<div class="tp_info_center">
+		<!-- 星级评价 -->
+		
+		
+		
+		<!-- logo -->
+		<div class="lg">
+		    <div class="logo_djyz"></div>
+	</div>
+		<!-- 可信网站验证 -->
+		<div class="kx" >
+			<div class="kx_nm"><span class="i18n" key="SITE_VERIFY">可信网站 中网验证</span></div>
+				<div class="kx_sn"><span class="i18n" key="SITE_SN">可信网站编码：</span> e1403181101064741993ka000000</div>
+		    </div>
+	</div>
+</div>
+<!-- 验证项 -->
+<div class="valid">
+	<div class="valid_tt fix">
+		
+		<span class="fl"><span class="i18n" key="VERI_ITEMS">验证项：</span></span>
+	</div>
+	<div class="valid_items">	
+		<dl>
+			<dt>
+				<div class="star">
+					<span class="star_nm i18n" key="START_RATING">验证深度</span>
+					<span class="star_lv lv_4"></span>
+				</div>
+			</dt>
+			<dd>				
+				<span class="valid_it"  ><span class="i18n" key="ICP_SITE_RECORD">ICP 备案信息</span><span class="icon_rt"></span></span>
+				<span class="valid_it"  ><span class="i18n" key="DOMAIN_INFO">域名注册信息</span><span class="icon_rt"></span></span>
+				<span class="valid_it" >
+				<span class="i18n" key="INDUSTRY">工商登记信息</span><span class="icon_rt"></span></span>
+					<span class="valid_it" ><span class="i18n" key="IDENTITY_INFO">身份证明信息</span><span class="icon_rt"></span></span>
+				<span class="valid_it" ><span class="i18n" key="SITE_OPERATION_MONITOR">网站运行监控</span><span class="icon_rt"></span></span>
+				<span class="valid_it" ><span class="i18n" key="SITE_TAMPER_MONITOR">网站篡改监控</span><span class="icon_rt"></span></span>
+				</dd>
+		</dl>
+		
+	</div>
+</div>
+
+
+<!-- 注册版本网站信息 start -->
+					<div id="site_info" style="display:block;">
+	<div class="m_o_d  attention">
+	<table><tr><td class="col_icon"><s class="i7"></s></td>
+		<td class="col_title"><span class="i18n" key="SECURITY_TIPS">安全防伪提示：</span></td>
+		<td class="col_desc">
+			<ul><li><span class="i18n" key="SECURITY_TIP_2">请确认本验证页面水印显示时间为当前访问时间：</span>2015-10-21 14:19</li>
+				<li><span class="i18n" key="SECURITY_TIP_4">所有可信网站都已收录至</span>
+					<a target="_blank" href="http://t.knet.cn?queryValue=www.icbc.com.cn&queryType=domainName">
+						<span class="i18n" key="SECURITY_TIP_5">可信网站权威数据库</span>
+					</a> 
+					<span class="i18n" key="SECURITY_TIP_6">和</span>
+					<a target="_blank" href="http://kx.cnic.cn/validatecode/validate.jsp?queryValue=www.icbc.com.cn&queryType=domainName">
+						<span class="i18n" key="SECURITY_TIP_7">全国网络目录数据库</span>
+					</a>
+				</li>
+			</ul>
+		</td></tr>
+	</table>
+</div>
+<div class="m_o_d  attention" style="margin-top:10px;">
+	<table><tr><td class="col_icon"><s class="i5"></s></td>
+		<td class="col_title"><span class="i18n" key="VERI_WAY">验证方法说明：</span></td>
+		<td class="col_desc">
+			<!-- 标准版 身份验证版 中企版 体验版 -->
+			<p><span class="i18n" key="VERSION_BUILD_STANDARD">该网站已通过中网“可信网站”身份验证，其提交的申请信息经中网（<a target="_blank" href="http://www.knet.cn">knet.cn</a>）人工审核、权威数据库比对、电话回访等多种方式核验确认。 </span></p>
+				</td></tr>
+	</table>
+</div><div class="mod">
+	<table>
+		<tr><td class="col_icon"><s class="i6"></s></td>
+			<td class="col_title"><span class="i18n" key="SITE_NAME">网站名称：</span></td>
+			<td class="col_desc"><div class="ba" style="width:400px;">中国工商银行中国网站</div>
+				
+			</td>
+		</tr>
+		<tr>
+			<td class="col_icon"></td>
+			<td class="col_title"><span class="i18n" key="SITE_DOMAINS">官网地址：</span></td>
+			<td class="col_desc slide_ten">
+				<div class="ba" style="width:400px;"><a target="_blank" href="http://www.icbc.com.cn">www.icbc.com.cn</a></div>
+			</td>
+		</tr>
+		<tr><td class="col_icon"></td>
+				<td class="col_title"><span class="i18n" key="ICP_RECORD">ICP备案号：</span></td>
+				<td class="col_desc">
+				    <a href="javascript:void(0)" onclick="window.open('http://www.miitbeian.gov.cn/icp/publish/query/icpMemoInfo_showPage.action');">
+				        京ICP证030247号</a>
+				</td>
+			</tr>
+		<tr><td class="col_icon"></td>
+			<td class="col_title"><span class="i18n" key="SEAL_PERIOD">可信网站有效期：</span></td>
+			<td class="col_desc">
+				<div class="ba" style="width:400px;">
+					Tue Mar 18 17:01:26 CST 2014<span class="i18n" key="TO">至</span>
+					Sat Mar 18 17:01:26 CST 2017</div>
+			</td>
+		</tr>
+		</table>
+</div>
+
+
+<script>
+function fun2(){
+	var obj = document.getElementById("l2");
+	if(obj.bj == "1"){
+		obj.style.backgroundPosition="-60px -60px";
+		obj.bj = "0";
+	}else{
+		obj.style.backgroundPosition="-80px -60px";
+		obj.bj = "1";
+	}
+	
+}
+</script>
+
+<div class="mod">
+	<table>
+		<tr>
+				<td class="col_icon">
+					<s class="i8"></s>
+				</td>
+				<td class="col_title">
+					<span class="i18n" key="COMPANY_NAME">公司名称：</span>
+				</td>
+				<td class="col_desc">
+					<div class="ba" style="width:400px;font-weight:bold;">
+						<span style=" margin-right:20px;display:inline-block;">中国工商银行股份有限公司</span>
+						</div>
+					
+					<s class="down"></s>
+				</td>
+			</tr>
+			<tr>
+		<td class="col_icon"></td>
+		<td class="col_title">
+			<span class="i18n" key="CUSTOMER_SERVICE">客服电话：</span>
+		</td>
+		<td class="col_desc">
+			<div class="ba colorRed" style="width:400px;">
+				<i class="i9"></i>95588</div>
+		</td>
+	</tr>
+<tr>
+				<td class="col_icon"></td>
+				<td class="col_title">
+					<span class="i18n" key="COMPANY_LICENSE_NUMBER">公司注册号：</span>
+				</td>
+				<td class="col_desc">
+					<div class="ba" style="width:400px;">
+						100000000003965</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="col_icon"></td>
+				<td class="col_title">
+					<span class="i18n" key="COMPANY_LICENSE_ADDRESS">公司注册地址：</span>
+				</td>
+				<td class="col_desc">
+					<div class="ba" style="width:400px;">
+						北京市西城区复兴门内大街５５号</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="col_icon"></td>
+				<td class="col_title">
+					<span class="i18n" key="COMPANY_ENTERPRISE_TYPE">企业类型：</span>
+				</td>
+				<td class="col_desc">
+					<div class="ba" style="width:400px;">
+						股份有限公司</div>
+				</td>
+			</tr>
+			<tr>
+				<td class="col_icon"></td>
+				<td class="col_title">
+					<span class="i18n" key="BUSINESS_SCOPE">经营范围：</span>
+				</td>
+				<td class="col_desc">
+					<div class="ba" style="width:400px;">
+						办理人民币存款、贷款；同业拆借业务；国内外结算；办理票据承兑、贴现、转贴现；各类汇兑业务；代理资金清算；提供信用证服务及担保；代理销售业务；代理发行、代理承销、代理兑付政府债券；代收代付业务；代理证券资金清算业务（银证转账）；保险兼业代理业务（有效期至2015年08月27日）；代理政策性银行、外国政府和国际金融机构贷款业务；保管箱服务；发行金融债券；买卖政府债券、金融债券；证券投资基金、企业年金托管业务；企业年金受托管理服务、年金账户管理服务；开放式基金的注册登记、认购、申购和赎回业务；资信调查、咨询、见证业务；贷款承诺；企业、个人财务顾问服务；组织或参加银团贷款；外汇存款；外汇贷款；外币兑换；出口托收及进口代收；外汇票据承兑和贴现；外汇借款；外汇担保；发行、代理发行、买卖或代理买卖股票以外的外币有价证券；自营、代客外汇买卖；外汇金融衍生业务；银行卡业务；电话银行、网上银行、手机银行业务；办理结汇、售汇业务；经国务院银行业监督管理机构批准的其他业务。 （依法须经批准的项目，经相关部门批准后方可开展经营活动）</div>
+				</td>
+			</tr>
+			</table>
+</div><div id="site_detail_info">
+<div name="detail_info" class="mod" style="height: 20px;">
+<table>
+		<tr><td class="col_icon"><s class="i4"></s></td>
+			<td class="col_title"><span class="i18n" key="DOMAIN">域名：</span></td>
+			<td class="col_desc"><div class="ba" style="width:400px;" data="name">www.icbc.com.cn</div><s class="up" loaded="n" domain="www.icbc.com.cn" issc="false" ></s></td>
+		</tr>
+		<tr><td class="col_icon"></td>
+			<td class="col_title"><span class="i18n" key="ICP_RECORD">ICP备案号：</span></td>
+			<td class="col_desc"><div class="ba" style="width:400px;" data="icp"><a href="javascript:void(0)" onclick="window.open('http://www.miitbeian.gov.cn/icp/publish/query/icpMemoInfo_showPage.action');">京ICP证030247号</a></div></td>
+		</tr>
+		<tr><td class="col_icon"></td>
+			<td class="col_title"><span class="i18n" key="DOMAIN_PERIOD">域名有效期：</span></td>
+			<td class="col_desc"><div class="ba" style="width:400px;" data="period"></div></td>
+		</tr>
+		<tr><td class="col_icon"></td>
+			<td class="col_title"><span class="i18n" key="DOMAIN_CONTACT_EMAIL">域名联系人邮件：</span></td>
+			<td class="col_desc"><div class="ba" style="width:400px;" data="contactEmail"></div></td>
+		</tr>
+		<tr style="display:none"><td class="col_icon"></td>
+			<td colspan="2"><div class="ba" style="width:510px;color:red;" data="message"></div></td>
+		</tr>
+	</table>
+</div>
+</div>
+</div><div id="safe_info" style="display:none;">
+	<div class="m_o_d  attention">
+	<table><tr><td class="col_icon"><s class="i7"></s></td>
+		<td class="col_title"><span class="i18n" key="SECURITY_TIPS">安全防伪提示：</span></td>
+		<td class="col_desc">
+			<ul><li><span class="i18n" key="SECURITY_TIP_2">请确认本验证页面水印显示时间为当前访问时间：</span>2015-10-21 14:19</li>
+				<li><span class="i18n" key="SECURITY_TIP_4">所有可信网站都已收录至</span>
+					<a target="_blank" href="http://t.knet.cn?queryValue=www.icbc.com.cn&queryType=domainName">
+						<span class="i18n" key="SECURITY_TIP_5">可信网站权威数据库</span>
+					</a> 
+					<span class="i18n" key="SECURITY_TIP_6">和</span>
+					<a target="_blank" href="http://kx.cnic.cn/validatecode/validate.jsp?queryValue=www.icbc.com.cn&queryType=domainName">
+						<span class="i18n" key="SECURITY_TIP_7">全国网络目录数据库</span>
+					</a>
+				</li>
+			</ul>
+		</td></tr>
+	</table>
+</div>
+<div class="m_o_d  attention" style="margin-top:10px;">
+	<table><tr><td class="col_icon"><s class="i5"></s></td>
+		<td class="col_title"><span class="i18n" key="VERI_WAY">验证方法说明：</span></td>
+		<td class="col_desc">
+			<!-- 标准版 身份验证版 中企版 体验版 -->
+			<p><span class="i18n" key="VERSION_BUILD_STANDARD">该网站已通过中网“可信网站”身份验证，其提交的申请信息经中网（<a target="_blank" href="http://www.knet.cn">knet.cn</a>）人工审核、权威数据库比对、电话回访等多种方式核验确认。 </span></p>
+				</td></tr>
+	</table>
+</div><div class="mod">
+	<table>
+		<tr><td class="col_icon"><s class="i6"></s></td>
+			<td class="col_title"><span class="i18n" key="MONITOR">运行宝：</span></td>
+			<td class="col_desc"><div class="ba" style="width:400px;">
+				<span class="i18n" key="MONITOR_DETAIL">该网站使用了运行宝来保障网站性能的稳定性。</span></div>
+				<s class="down"></s>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="mod">
+	<table>
+		<tr><td class="col_icon"><s class="i6"></s></td>
+			<td class="col_title"><span class="i18n" key="SECURITY_SCAN">安全扫描：</span></td>
+			<td class="col_desc"><div class="ba" style="width:400px;">
+				<span class="i18n Dspan" key="SECURITY_SCAN_DETAIL_E_title">网站在审核中的病毒扫描环节由杭州安恒信息技术有限公司提供技术支持。</span>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+</div><div id="style_info" style="display:none;">
+	<div class="m_o_d  attention">
+	<table><tr><td class="col_icon"><s class="i7"></s></td>
+		<td class="col_title"><span class="i18n" key="SECURITY_TIPS">安全防伪提示：</span></td>
+		<td class="col_desc">
+			<ul><li><span class="i18n" key="SECURITY_TIP_2">请确认本验证页面水印显示时间为当前访问时间：</span>2015-10-21 14:19</li>
+				<li><span class="i18n" key="SECURITY_TIP_4">所有可信网站都已收录至</span>
+					<a target="_blank" href="http://t.knet.cn?queryValue=www.icbc.com.cn&queryType=domainName">
+						<span class="i18n" key="SECURITY_TIP_5">可信网站权威数据库</span>
+					</a> 
+					<span class="i18n" key="SECURITY_TIP_6">和</span>
+					<a target="_blank" href="http://kx.cnic.cn/validatecode/validate.jsp?queryValue=www.icbc.com.cn&queryType=domainName">
+						<span class="i18n" key="SECURITY_TIP_7">全国网络目录数据库</span>
+					</a>
+				</li>
+			</ul>
+		</td></tr>
+	</table>
+</div>
+<div class="m_o_d  attention" style="margin-top:10px;">
+	<table><tr><td class="col_icon"><s class="i5"></s></td>
+		<td class="col_title"><span class="i18n" key="VERI_WAY">验证方法说明：</span></td>
+		<td class="col_desc">
+			<!-- 标准版 身份验证版 中企版 体验版 -->
+			<p><span class="i18n" key="VERSION_BUILD_STANDARD">该网站已通过中网“可信网站”身份验证，其提交的申请信息经中网（<a target="_blank" href="http://www.knet.cn">knet.cn</a>）人工审核、权威数据库比对、电话回访等多种方式核验确认。 </span></p>
+				</td></tr>
+	</table>
+</div><div class="mod" style="display: ;">
+			<table><tr><td><div class="ba" style="width:540px;padding-left:40px;">
+				<span class="i18n" key="FEATURE_CERTIFICATION">对ISO体系认证、国家免检产品、3C认证、CE产品认证等25项国内外的特色资质进行验证，展示企业的特色资质。<a href="http://kexin.knet.cn/column_1/column_1_2/column_1_2_1/column_1_2_1_5/201212/t20121217_38252.html" target="_blank">点击查看</a>25项特色资质。</span>
+			</div></td></tr></table>
+		</div>
+	</div><!-- 注册版本网站信息 end -->
+					<!-- 附加信息 start -->
+					<div class="body">
+						<div class="extra">
+							<p id="EXTRA_1" key="EXTRA_1"><span class="i18n" key="EXTRA_1">申请单位经营主体的运营状况、财务状况、信用状况等不在验证范围内。请点击查看<a href="http://www.knet.cn/column_1/column_1_2/column_1_2_1/column_1_2_1_5/201212/t20121217_38251.html" target="_blank">验证方法说明</a>。</span></p>
+							<p id="EXTRA_2" key="EXTRA_2"><span class="i18n" key="EXTRA_2">欢迎公众监督举报，电话：010-58813333、010-96002，邮箱：<a class="mail" href="mailto:supervise@knet.cn">supervise@knet.cn</a></span></p>
+							<p id="EXTRA_5" key="EXTRA_5"><span class="i18n" key="EXTRA_5">如需要更新信息，请登录<a target="_blank" href="http://ts.knet.cn">可信网站验证用户服务平台</a>。</span></p>
+						</div>
+						<div class="ft" >
+							<table>
+								<tr>
+								<td>
+									<p>
+									<dl style="overflow:hidden;zoom:1;width:365px; margin-bottom: 10px;">
+									    <dt style="float:left;"> <span class="i18n" key="FOOT_3_TIPS">可信网站验证管理机构：</span><dt>
+										<dd style="float:left;">
+											<div><span class="i18n" key="FOOT_3_2"><a target="_blank" href="http://ectrust.knet.cn/">中国电子商务协会可信电子商务推进中心</a></span></div>
+											<span class="i18n" key="FOOT_3"><a target="_blank" href="http://www.knet.cn">北龙中网(北京)科技有限责任公司（KNET）</a></span> 
+									    </dd>
+									</dl>
+									</p>
+									<p><span class="i18n" key="FOOT_5">业务监督机构：<a target="_blank" href="http://www.isc.org.cn/">中国互联网协会（ISC）</a></span></p>
+									<p><span class="i18n" key="FOOT_4">技术支持机构：<a target="_blank" href="http://www.cnic.cn/">中国科学院计算机网络信息中心（CNIC）</a></span></p>
+								</td>
+								<td>
+							   		  
+							    </td>
+							  </tr></table> 
+							 <div class="zhangBox"> 
+							 	<div class="zhang1"></div>
+							 	<div class="zhang3"></div>
+							 </div>
+							   
+						</div>
+					</div>
+					<!-- 附加信息 end -->
+				</div>
+			</div>
+		</div>
+		</div>
+	
+	<div class="jiathis_parent_style">
+
+		<div class="jiathis_style" >
+			<a class="jiathis_button_qzone"></a>
+			<a class="jiathis_button_tsina"></a>
+			<a class="jiathis_button_tqq"></a>
+			<a class="jiathis_button_renren"></a>
+			<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+		</div>
+		<div style="float:right;">
+			<a target="_blank" href="http://kexin.knet.cn/column_1/column_1_2/column_1_2_1/column_1_2_1_6/?r2=a3hsb2dvLmtuZXQuY246MTIwMDAvdmVyaWZ5c2VhbC5kbGw_c249ZTE0MDMxODExMDEwNjQ3NDE5OTNrYTAwMDAwMCZzaXplPTM&r1=d3d3LmljYmMuY29tLmNuL2ljYmMv&sdn=d3d3LmljYmMuY29tLmNu" class='butBigSq'><span class="i18n" key="I_WANT_TO_APPLY_FOR">我要申请验证</span></a>
+			<a target="_blank" href="http://jubao.knet.cn/?reportDM=www.icbc.com.cn&isFromVerify=true" class="butJB"><span id="report_btn" class="i18n" key="REPORT_BTN">举报</span></a>
+			<div class="lan_switch">
+				<a class="lan_pot" href="javascript:;" id="CHANGE_LANG" defaultLang="zh" key="CHANGE_LANG">选择语言</a>
+				<div class="lan_li" id="lang_select" style="display:none;">
+					<a href="/international?locale=zh_cn" language="zh_cn"><s class="zh_cn"></s>中文(简体)</a>
+					<a href="/international?locale=zh_tw" language="zh_tw"><s class="zh_tw"></s>中文(繁体)</a>
+					<a href="/international?locale=en" language="en"><s class="en"></s>English</a>
+				</div>
+			</div>
+	 	</div>
+ 	</div>
+ 	<script type="text/javascript" src="http://rr.knet.cn/static/js/verify.js"></script>
+	<script type="text/javascript" src="http://rr.knet.cn/static/js/placeholder.js"></script>
+	<script type="text/javascript" >
+	autoclick(1);
+	</script>
+	<script type="text/javascript">
+		var jiathis_config = {
+			url: '',
+			lhost : 'http://rr.knet.cn/static/',
+		    codehost : 'http://rr.knet.cn/static/',
+		    title : ' ',
+		    summary : "恭喜中国工商银行股份有限公司通过了#中网可信网站验证#，获得可信证书和标识，被“全国网络目录数据库”和“可信网站权威数据库”http://t.cn/SaAY4A收录，并能在浏览器展示可信验证信息，立即下载#网站查验助手#来体验吧。猛点：http://t.cn/zOqpivV"
+		   }
+	</script>
+	<script type="text/javascript" src="http://rr.knet.cn/static/jiathis/jia.js" charset="utf-8"></script>
+ 	<!-- 
+<script type="text/javascript" src="http://w.cnzz.com/c.php?id=30025704"></script>
+ --> <div style="display:none">
+	 		<script type="text/javascript">
+				var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+				document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fa060ef8ef7e70bb93893ad54c9676772' type='text/javascript'%3E%3C/script%3E"));
+			</script>
+	 	</div><script type="text/javascript">
+ function clickIE4(){
+     if (event.button==2){
+             return false;
+     }
+}
+function clickNS4(e){
+     if (document.layers||document.getElementById&&!document.all){
+             if (e.which==2||e.which==3){
+                     return false;
+             }
+     }
+}
+function OnDeny(){
+     if(event.ctrlKey || event.keyCode==78 && event.ctrlKey || event.altKey || event.altKey && event.keyCode==115){
+             return false;
+     }
+}
+if (document.layers){
+     document.captureEvents(Event.MOUSEDOWN);
+     document.onmousedown=clickNS4;
+     document.onkeydown=OnDeny();
+}else if (document.all&&!document.getElementById){
+     document.onmousedown=clickIE4;
+     document.onkeydown=OnDeny();
+}
+document.oncontextmenu=new Function("return false");
+ </script><style>
+#research_onlineapply{
+	background: url("http://rr.knet.cn/static/application/images/apply_verify_qr.png") no-repeat 0 0;
+	position:fixed;
+	_position:absolute;
+	left:50%;
+	margin-left:412px;
+	width:130px;
+	height:451px;
+	z-index:10000;
+}
+
+#research_onlineapply_qr{
+	position:fixed;
+	_position:absolute;
+	left:50%;
+	margin-left:420px;
+	top:359px;
+	width:114px;
+	height:114px;
+	z-index:20000;
+}
+
+</style>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			.todos {
+				max-width: 460px;
+				border: 1px solod #333;
+				box-shadow: 0 0 5px #666;
+				padding: 20px;
+				position:absolute;
+				left:50%;
+				top:50%;
+				transform:translate( -50% ,-50%);
+			}
+			
+			h3,
+			h4 {
+				color: #999;
+				padding-bottom:15px;
+			}
+			h4 {
+				padding-bottom:10px;
+				padding-top:10px;
+			}
+			
+			.todos form input {
+				width:448px;
+				height:32px;
+				border-radius: 3px;
+				padding: 5px;
+				border:1px solid #999;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			ul li {
+				height: 50px;
+				line-height: 50px;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				position:relative;
+			}
+			
+			ul li+li {
+				border-top: 1px dashed #999;
+			}
+			
+			ul li button {
+				padding:0 4px;
+				position:absolute;
+				right:0;
+				top:15px;
+			}
+			.completed {
+				border-top:1px solid #666;
+			}
+			.completed ul li{
+				color:#999;
+				text-decoration:line-through;
+			}
+			.info {
+				color:#999;
+			}
+			.info button {
+				float:right;
+			}
+
+		</style>
+	</head>
+
+	<body>
+
+		<div ng-controller="myController" class="todos">
+			<div>
+				<h3>事项列表</h3>
+				<form ng-submit=todo()>
+					<input type="text" ng-model="text" placeholder="请输入您的计划" />
+				</form>
+			</div>
+			<div>
+				<h4>待办事项</h4>
+				<ul>
+					<li ng-repeat="todo in todos">
+						<input type="checkbox" n-checked='todo.flag' ng-click="down($index)"> {{todo.text}}
+						<button ng-click="removeList(todos,$index)">X</button>
+					</li>
+				</ul>
+			</div>
+			<div class="completed">
+				<h4>已办事项</h4>
+				<ul>
+					<li ng-repeat="todo in downTodos">
+						<input type="checkbox" ng-checked='todo.flag' ng-click="up($index)"> {{todo.text}}
+						<button ng-click="removeList(downTodos,$index)">X</button>
+					</li>
+				</ul>
+			</div>
+			<div class="info">
+				<span>共{{todos.length}}条</span><button ng-click="deleteAll()">全部删除</button>
+			</div>
+
+		</div>
+		<script src="angular.min.js"></script>
+		<script>
+			var app = angular.module('app', []);
+			app.controller('myController', ['$scope', function($scope) {
+				$scope.todos = [];
+				$scope.downTodos = [];
+				$scope.todo = function() {
+
+					$scope.todos.unshift({
+						text: $scope.text,
+						flag: false
+					});
+				};
+				$scope.down = function(index) {
+					var todo = $scope.todos.splice(index, 1)[0];
+					todo.flag = true;
+					$scope.downTodos.unshift(todo);
+				};
+				$scope.up = function(index) {
+					var todo = $scope.downTodos.splice(index, 1)[0];
+					todo.flag = false;
+					$scope.todos.unshift(todo);
+				};
+				$scope.removeList = function(obj, index) {
+					obj.splice(index, 1);
+				};
+				$scope.deleteAll = function() {
+					$scope.todos.length = 0;
+				}
+			}])
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+
+		</title>
+		<style type="text/css">
+		#content {
+				position: relative;
+		}
+		
+		body {
+			margin: 0px;
+		}
+
+		.box {
+			width: 50px;
+			height: 50px;
+			background-color: #DBC59E;
+			position: absolute;
+		}
+		.background-box {
+			width: 50px;
+			height: 50px;
+			background: url(dog.jpg) no-repeat;
+			background-size: 500px 500px;
+			position: absolute;
+		}
+
+		</style>
+	</head>
+
+	<body>
+		<section id='content'></section>
+
+		<script>
+		window.onload=function(){
+			var content=document.getElementById('content');
+			var n=-1;
+			var text='';
+			var boxList=content.getElementsByTagName('div');
+			for(var i=0;i<100;i++){
+				if(i%10==0){
+					n++;
+				}
+				text+='<div class="box" style="left:'+i%10*60+'px;top:'+n*60+
+				'px;background-position:-'+i%10*50+'px -'+n*50+'px">'+(i+1)+'</div>';
+			}
+			content.innerHTML=text;
+			for(i=0;i<100;i++){
+				boxList[i].onmouseover=function(){
+					this.style.color='rgba(0,0,0,0)';
+					this.className ='background-box';
+				}
+			}
+		}
+
+		</script>
+	</body>
+
+</html>

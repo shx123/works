@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+*{padding:0;margin:0;}
+ul{list-style:none;}
+.v_show{width:400px;border:1px solid #f00;overflow:hidden;}
+.cartoon,.highlight_tip,.change_btn{float:left;margin-right:20px;}
+.highlight_tip span{margin-right:10px;}
+.v_caption em{float:right;}
+.v_caption{overflow:hidden;line-height:30px;background:#FF0;}
+
+.v_content_list{height:150px;position:relative;}
+.v_content_list li{float:left;}
+.v_content_list li img{width:100px;height:100px;}
+.current{color:#0F0;}
+</style>
+<script src="../jquery-1.6.4.min.js"></script>
+<script>
+$(function(){
+var page=1;
+var $show=$(".v_show");
+var $list=$show.find(".v_content_list");
+var $v_content=$show.find(".v_content");
+var $li=$list.find("li")
+var len=$li.length;
+var v_width=$v_content.width();
+var li_width=$li.width();
+var much=Math.ceil(len/4);
+$list.css("width",li_width*len);
+
+$(".next").click(function(){
+	if(!$list.is(":animated")){
+		if(page==much){
+			$list.animate({left:"0px"},"slow");
+			page=1;
+		}else{
+			$list.animate({left:"-="+v_width},"slow");
+			page++;
+		}
+	};
+	$(".highlight_tip").find("span").eq(page-1).addClass("current").siblings().removeClass("current");
+});
+
+$(".prev").click(function(){
+	if(!$list.is(":animated")){
+		if(page==1){
+			$list.animate({left:"-="+v_width*(much-1)},"slow");
+			page=much;
+		}else{
+			$list.animate({left:"+="+v_width},"slow");
+			page--;
+		}	
+	}
+	$(".highlight_tip").find("span").eq(page-1).addClass("current").siblings().removeClass("current");	
+})
+
+})
+</script>
+</head>
+<body>
+<div class="v_show">
+  <div class="v_caption">
+    <h4 class="cartoon">卡通动漫</h4>
+    <div class="highlight_tip"> <span class="current">1</span><span>2</span><span>3</span> </div>
+    <div class="change_btn"> <span class="prev">上一页</span> <span class="next">下一页</span> </div>
+    <em><a href="#">更多>></a></em>
+  </div>
+  
+  <div class="v_content">
+  	<ul class="v_content_list">
+    	<li><img src="main-tb1.jpg" /><h3>海贼王1</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王2</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王3</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王4</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王5</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王6</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王7</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王8</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王9</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王10</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王11</h3><span>播放<em>64789</em></span></li>
+        <li><img src="main-tb1.jpg" /><h3>海贼王12</h3><span>播放<em>64789</em></span></li>
+    </ul>	
+  </div>
+</div>
+</body>
+</html>

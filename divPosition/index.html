@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+
+	<head>
+		<meta charset="UTF-8">
+		<title>
+
+		</title>
+		<style type="text/css">
+			#box{
+				width:500px;
+				height:500px;
+				border:1px solid black;
+				position:relative;
+			}
+			div{
+				width:100px;
+				height:100px;
+				background:red;
+				text-align:center;
+				font:bold 50px/100px '宋体';
+				color:white;
+				position:absolute;
+				left:0px;
+				top:0px;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<input type="button" value="按钮" id="btn">
+		<section id="box">			
+		</section>
+
+		<script>
+		window.onload=function(){
+			var btn=document.getElementById('btn');
+			var box=document.getElementById('box');
+			var divList=document.getElementsByTagName('div');
+			var x=0;
+			var y=0;
+			var onOff=-1;
+			btn.onclick=function(){
+				box.innerHTML='';
+				onOff++;
+				if(onOff>3){
+					onOff=0;
+				}
+				for(var i=0;i<5;i++){
+					if(onOff==0){
+						if(i<=2){
+							x=i*100;
+							y=i*100;
+						}else{
+							x=400-i*100;
+							y=i*100;
+						}
+					}else if(onOff==1){
+						if(i<=2){
+							x=i*100;
+							y=i*100;
+						}else{
+							x=i*100;
+							y=400-i*100;
+						}
+					}else if(onOff==2){
+						if(i<=2){
+							x=400-i*100;
+							y=i*100;
+						}else{
+							x=i*100;
+							y=i*100;
+						}					
+					}
+					else if(onOff==3){
+						if(i<=2){
+							x=i*100;
+							y=400-i*100;
+						}else{
+							x=i*100;
+							y=i*100;
+						}						
+					}
+					box.innerHTML+='<div style="left:'+x+'px;top:'+y+'px"></div>';
+					divList[i].innerHTML=i;
+				}
+			}
+		}	
+
+//左:
+//left:0         top:0
+//	100		      100
+//	200       	  200
+//	100			  300
+//	0			  400
+//
+//上:
+//left:0		  top:0
+//	100			100
+//	200			200
+//	300			100
+//	400			0
+//	
+//右:
+//left:400		  top:0
+//	 300			100
+//	 200			200
+//	 300			300
+//	 400			400
+//	 
+//下:
+//left:0		  top:400
+//	100			  300
+//	200			  200
+//	300			  300
+//	400			  400
+	
+		</script>
+	</body>
+</html>
