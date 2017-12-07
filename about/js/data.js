@@ -54,7 +54,7 @@ var href=[
 			'https://shx123.github.io/works/carousel/',
 			'https://shx123.github.io/works/divPosition/',
 			'https://shx123.github.io/works/scrollBar/',
-			'https://shx123.github.io/works/aboutMe/',
+			'https://shx123.github.io/works/about/',
 			'http://www.3dweilai.com',
 			'https://shx123.github.io/works/pageScroll/',
 			'https://shx123.github.io/works/list/',
