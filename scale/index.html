@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>图片跟随鼠标移动</title>
+<style>
+*{padding:0;margin:0;}
+li{position:relative;float:left;margin:20px 20px;list-style:none;}
+#tip{position:absolute;}
+.one{width:200px;height:200px;}
+p{background:#ccc;}
+</style>
+
+</head>
+
+<body>
+<ul>
+<li><a href="main-tb1.jpg" class="tooltip"  title="这是提示1"><img src="main-tb1.jpg" alt="1"></a></li>
+<li><a href="main-tb2.jpg" class="tooltip"  title="这是提示2"><img src="main-tb2.jpg" alt="2"></a></li>
+<li><a href="main-tb3.jpg" class="tooltip"  title="这是提示3"><img src="main-tb3.jpg" alt="3"></a></li>
+
+</ul>
+<script src="jquery-2.2.4.min.js"></script>
+<script>
+$(function(){
+	
+	$(".tooltip").mouseover(function(e){
+		this.myTitle=this.title;
+		this.title="";
+		var imgTitle=this.myTitle? "<br/>"+this.myTitle: "";
+		var tip="<div id='tip'><img src='"+this.href+"' alt='55' class='one'/>"+"<p>"+imgTitle+"</p>"+"</div>";
+		$("body").append(tip);
+		$("#tip").css({
+			"top":(e.pageY+20)+"px",
+			"left":(e.pageX+10)+"px"
+		}).show("fast");	
+	}).mouseout(function(){
+		this.title=this.myTitle;
+		$("#tip").remove();	
+	}).mousemove(function(e){
+		$("#tip").css({
+			"top":(e.pageY+20)+"px",
+			"left":(e.pageX+10)+"px"	
+		})	
+	})	
+});
+</script>
+</body>
+</html>

@@ -37,12 +37,13 @@ var spanText=[
 			'三未科技网站',
 			'翻页轮播',
 			'angularJS实现列表增减',
+			'随鼠标移动的图片',
 			
 ]
 var href=[
 			'https://shx123.github.io/works/shopping/',
 			'https://shx123.github.io/works/shopping/detail.html',
-			'https://shx123.github.io/works/bgimg/',
+			'https://shx123.github.io/works/bgImg/',
 			'https://shx123.github.io/works/bank/',
 			'https://shx123.github.io/works/blog/',
 			'https://shx123.github.io/works/travel/',
@@ -57,5 +58,6 @@ var href=[
 			'http://www.3dweilai.com',
 			'https://shx123.github.io/works/pageScroll/',
 			'https://shx123.github.io/works/list/',
+			'https://shx123.github.io/works/scale/',
 
 ]

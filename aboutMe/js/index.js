@@ -25,7 +25,7 @@ window.onload=function(){
     },620);
     //圆背景图消失
     setTimeout(function(){
-        $("#bg").style.display='none';
+        $("#bg").fadeOut('nomal');
     },1100);
      //loading效果显示
     setTimeout(function(){
